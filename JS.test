@@ -1,0 +1,46 @@
+// create avariable to hold your NFTs
+let myNFTs = [];
+
+// this function will take in some values as parameters, create an
+//NFT object using the parameters passed to it for its metadata,
+//and store it in the variable above.
+function mintNFT(title,creator, creationYear, details) {
+    // Create an NFT object with  the given metadata  
+    const nft = {
+        title: title,
+        creator: creator,
+        creationYear: creationYear,
+        details: details
+     
+   };
+   
+  // Add the NFT object to the myNFTs array
+  myNFTs.push(nft);
+}
+// creater a "lop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs()  {
+     myNFTs.forEach((nft, index) => {
+      console.log(`NFT ${index + 1}:`);
+      console.log(`Title:${nft.title}`);
+        console.log(`Creator:${nft.creator}`);
+        console.log(`Year:${nft.creationYear}`);
+        console.log(`Details:${nft.details}`);
+        console.log('-------------------------'); 
+   });
+}
+
+
+//print the total number of  NFTs we have minted to the  console
+function getTotalSupply() { 
+        console.log(`Total NFTs minted: ${myNFTs.length}`);
+}
+
+//call your functions below this line
+mintNFT( "Tata Groups", "Jamshedji Nusserwanji Tata", 1868,"A globlal enterprice, headquartered in India.");
+mintNFT("Adani Groups", "MR.Gautam Adani", 1988, " A formidable entity within Indian's corporate sector.");
+mintNFT("Jio", "MR.Mukesh Ambani",  2016, "An Indian telecommunations and a subsidiary of jio platform.");
+
+listNFTs();
+getTotalSupply();
+
